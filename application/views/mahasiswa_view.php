@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<title>Data Mahasiswa</title>
-</head>
-
-<body>
 	<h1>Data Mahasiswa</h1>
 	<form method="get">
 		<input type="text" required name="keyword" placeholder="Cari mahasiswa berdasarkan nama..." value="<?= $keyword ?>">
@@ -39,7 +30,3 @@
 			<?php endforeach; ?>
 		</tbody>
 	</table>
-
-</body>
-
-</html>

@@ -17,7 +17,11 @@ class Mahasiswa extends CI_Controller
 		}
 
 		$data["keyword"] = $keyword;
-		$this->load->view('mahasiswa_view', $data); // Menampilkan data mahasiswa ke view
+
+		$data['title'] = 'List Mahasiswa';
+		$data['active_menu'] = 'data_mahasiswa';
+		$data['content'] = $this->load->view('mahasiswa_view', $data, true);
+		$this->load->view('template/template', $data); // Menampilkan data mahasiswa ke view
 	}
 
 	public function input_data()

@@ -11,7 +11,10 @@ class Barang extends CI_Controller {
 
     public function index()
     {
-        $data['barang'] = $this->BarangModel->get_barang();
-        $this->load->view('barang_view', $data);
+		$data['title'] = 'List Barang';
+		$data['active_menu'] = 'data_barang';
+		$data['barang'] = $this->BarangModel->get_barang();
+		$data['content'] = $this->load->view('barang_view', $data, true);
+        $this->load->view('template/template', $data);
     }
 }
