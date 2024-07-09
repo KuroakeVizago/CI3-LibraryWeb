@@ -35,7 +35,7 @@
 			</ul>
 			<ul class="navbar-nav ms-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="<?= site_url('logout'); ?>">Logout</a>
+					<a class="nav-link" href="<?= base_url('logout'); ?>">Logout</a>
 				</li>
 			</ul>
 		</div>
