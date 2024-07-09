@@ -15,44 +15,40 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
-CREATE TABLE `barang` (
-  `id_barang` int NOT NULL AUTO_INCREMENT,
-  `kode_barang` varchar(20) NOT NULL,
-  `nama_barang` varchar(100) NOT NULL,
-  `kategori_barang` varchar(50) NOT NULL,
-  `deskripsi_barang` text,
-  `harga_beli` float NOT NULL,
-  `harga_jual` float NOT NULL,
-  `stok_barang` int NOT NULL,
-  `supplier_barang` varchar(100) NOT NULL,
-  `tanggal_masuk` date NOT NULL,
-  PRIMARY KEY (`id_barang`),
-  UNIQUE KEY `kode_barang` (`kode_barang`)
+-- Membuang struktur basisdata untuk library_schemea
+CREATE DATABASE IF NOT EXISTS `library_schemea` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `library_schemea`;
+
+-- membuang struktur untuk table library_schemea.library
+CREATE TABLE IF NOT EXISTS `library` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `genre` varchar(100) DEFAULT NULL,
+  `published_year` year DEFAULT NULL,
+  `borrowed_by` varchar(255) DEFAULT NULL,
+  `borrow_date` date DEFAULT NULL,
+  `due_date` date DEFAULT NULL,
+  `return_date` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
 );
 
--- Membuang data untuk tabel practice_makes_perfect.barang: ~10 rows (lebih kurang)
-INSERT INTO `barang` (`id_barang`, `kode_barang`, `nama_barang`, `kategori_barang`, `deskripsi_barang`, `harga_beli`, `harga_jual`, `stok_barang`, `supplier_barang`, `tanggal_masuk`) VALUES
-	(2, 'BRG002', 'Mouse Logitech', 'Aksesoris', 'Mouse wireless', 150000, 200000, 100, 'PT. XYZ', '2024-05-02'),
-	(3, 'BRG003', 'Keyboard Mechanical', 'Aksesoris', 'Keyboard mechanical untuk gaming', 800000, 1000000, 51, 'PT. DEF', '2024-05-03'),
-	(4, 'BRG004', 'Monitor Samsung', 'Elektronik', 'Monitor 24 inch', 1500000, 1800000, 21, 'PT. GHI', '2024-05-04'),
-	(5, 'BRG005', 'Printer Epson', 'Elektronik', 'Printer multifungsi', 1200000, 1400000, 40, 'PT. JKL', '2024-05-05'),
-	(6, 'BRG006', 'Flashdisk Sandisk 32GB', 'Penyimpanan', 'Flashdisk dengan kapasitas 32GB', 100000, 125000, 200, 'PT. MNO', '2024-05-06'),
-	(7, 'BRG007', 'Harddisk Eksternal WD 1TB', 'Penyimpanan', 'Harddisk eksternal dengan kapasitas 1TB', 900000, 1100000, 6, 'PT. PQR', '2024-05-07'),
-	(8, 'BRG008', 'Headset Sony', 'Aksesoris', 'Headset dengan kualitas suara tinggi', 300000, 400000, 80, 'PT. STU', '2024-05-08'),
-	(9, 'BRG009', 'Router TP-Link', 'Networking', 'Router wireless', 500000, 600000, 70, 'PT. VWX', '2024-05-09'),
-	(10, 'BRG010', 'Kamera Canon', 'Elektronik', 'Kamera DSLR', 7000000, 8500000, 10, 'PT. YZA', '2024-05-10');
+-- Membuang data untuk tabel library_schemea.library: ~6 rows (lebih kurang)
+INSERT INTO `library` (`id`, `title`, `author`, `genre`, `published_year`, `borrowed_by`, `borrow_date`, `due_date`, `return_date`) VALUES
+	(102, 'Naruto', 'Masashi Kishimoto', 'Manga', '1999', NULL, NULL, NULL, NULL),
+	(103, 'One Piece', 'Eiichiro Oda', 'Manga', '1997', NULL, NULL, NULL, NULL),
+	(104, 'Attack on Titan', 'Hajime Isayama', 'Manga', '2009', NULL, NULL, NULL, NULL),
+	(105, 'Death Note', 'Tsugumi Ohba', 'Manga', '2003', NULL, NULL, NULL, NULL),
+	(106, 'Dragon Ball', 'Akira Toriyama', 'Manga', '1984', NULL, NULL, NULL, NULL);
 
--- membuang struktur untuk table practice_makes_perfect.users
-CREATE TABLE `users` (
+-- membuang struktur untuk table library_schemea.users
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
-
--- Membuang data untuk tabel practice_makes_perfect.users: ~0 rows (lebih kurang)
-
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;

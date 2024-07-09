@@ -13,7 +13,7 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="#">Kuroake Vizago</a>
+		<a class="navbar-brand" href="#"><?php echo $user; ?></a>
 		<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse"
 				data-bs-target="#navbarColor01"
@@ -26,15 +26,16 @@
 			<ul class="navbar-nav me-auto">
 				<li class="nav-item">
 					<a class="nav-link <?php echo $active_menu == 'home' ? 'active' : ''; ?>"
-					   href='home'>Home</a>
+					   href='home'>Data Perpustakaan</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link <?php echo $active_menu == 'data_mahasiswa' ? 'active' : ''; ?>"
-					   href='mahasiswa'>Data Mahasiswa</a>
+					   href='mahasiswa'>Data Admin</a>
 				</li>
+			</ul>
+			<ul class="navbar-nav ms-auto">
 				<li class="nav-item">
-					<a class="nav-link <?php echo $active_menu == 'data_barang' ? 'active' : ''; ?>"
-					   href='barang'>Data Barang</a>
+					<a class="nav-link" href="<?= site_url('logout'); ?>">Logout</a>
 				</li>
 			</ul>
 		</div>

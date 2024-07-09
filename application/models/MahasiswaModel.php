@@ -8,9 +8,15 @@ class MahasiswaModel extends CI_Model
 	}
 	// Data array data_mahasiswa
 	private $data_mahasiswa = array(
-		array('id' => 1, 'nama' => 'Agus Santoso', 'npm' => '1412130011', 'angkatan' =>
-		'2020', 'kelas' => 'A', 'alamat' => 'Jl. Contoh No. 1', 'mata_kuliah_favorit' =>
-		'Pemrograman Web'),
+		array(
+			'id' => 1,
+			'nama' => 'Agus Santoso',
+			'npm' => '1412130011',
+			'angkatan' => '2020',
+			'kelas' => 'A',
+			'alamat' => 'Jl. Contoh No. 1',
+			'mata_kuliah_favorit' => 'Pemrograman Web'
+		),
 		array('id' => 2, 'nama' => 'Budi Raharjo', 'npm' => '1412130022', 'angkatan' =>
 		'2019', 'kelas' => 'B', 'alamat' => 'Jl. Contoh No. 2', 'mata_kuliah_favorit' => 'Basis Data'),
 		array(
