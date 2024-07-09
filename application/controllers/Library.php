@@ -23,7 +23,7 @@ class Library extends CI_Controller {
 		$data['active_menu'] = 'data_Library';
 		$data['library'] = $this->LibraryModel->get();
 		$data['user'] = $this->session->userdata('username');
-		$data['content'] = $this->load->view('Library_view', $data, true);
+		$data['content'] = $this->load->view('library_view', $data, true);
         $this->load->view('template/template', $data);
     }
 

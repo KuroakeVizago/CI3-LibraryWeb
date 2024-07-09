@@ -28,10 +28,6 @@
 					<a class="nav-link <?php echo $active_menu == 'home' ? 'active' : ''; ?>"
 					   href='home'>Data Perpustakaan</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link <?php echo $active_menu == 'data_mahasiswa' ? 'active' : ''; ?>"
-					   href='mahasiswa'>Data Admin</a>
-				</li>
 			</ul>
 			<ul class="navbar-nav ms-auto">
 				<li class="nav-item">

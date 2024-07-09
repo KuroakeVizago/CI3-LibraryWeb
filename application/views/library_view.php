@@ -176,7 +176,7 @@
 	</div>
 </div>
 
-<script src="../../../vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo base_url("/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"); ?>"></script>
 <script>
 	document.addEventListener('DOMContentLoaded', function () {
 		const editModal = document.getElementById('editModal');
