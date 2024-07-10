@@ -26,52 +26,54 @@
 		<h1>Daftar Koleksi Buku</h1>
 		<button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#createModal">Tambah Buku</button>
 	</div>
-	<table class="table">
-		<thead class="table-light">
-		<tr>
-			<th>No</th>
-			<th>Judul Buku</th>
-			<th>Penulis</th>
-			<th>Genre</th>
-			<th>Tahun Terbit</th>
-			<th>Dipinjam Oleh</th>
-			<th>Tanggal Pinjam</th>
-			<th>Tanggal Jatuh Tempo</th>
-			<th>Tanggal Kembali</th>
-		</tr>
-		</thead>
-		<tbody>
-		<?php
-		$no = 1; // Initialize the sequential number
-		foreach ($library as $item):
-			?>
+	<div class="table-responsive">
+		<table class="table table-striped table-hover">
+			<thead class="table-light">
 			<tr>
-				<td><?php echo $no++; ?></td>
-				<td>
-					<a href="#" class="item-name" data-bs-toggle="modal" data-bs-target="#editModal"
-					   data-id="<?php echo $item['id']; ?>"
-					   data-title="<?php echo $item['title']; ?>"
-					   data-author="<?php echo $item['author']; ?>"
-					   data-genre="<?php echo $item['genre']; ?>"
-					   data-published_year="<?php echo $item['published_year']; ?>"
-					   data-borrowed_by="<?php echo $item['borrowed_by']; ?>"
-					   data-borrow_date="<?php echo $item['borrow_date']; ?>"
-					   data-due_date="<?php echo $item['due_date']; ?>"
-					   data-return_date="<?php echo $item['return_date']; ?>">
-						<?php echo $item['title']; ?>
-					</a>
-				</td>
-				<td><?php echo $item['author']; ?></td>
-				<td><?php echo $item['genre']; ?></td>
-				<td><?php echo $item['published_year']; ?></td>
-				<td><?php echo $item['borrowed_by']; ?></td>
-				<td><?php echo $item['borrow_date']; ?></td>
-				<td><?php echo $item['due_date']; ?></td>
-				<td><?php echo $item['return_date']; ?></td>
+				<th>No</th>
+				<th>Judul Buku</th>
+				<th>Penulis</th>
+				<th>Genre</th>
+				<th>Tahun Terbit</th>
+				<th>Dipinjam Oleh</th>
+				<th>Tanggal Pinjam</th>
+				<th>Tanggal Jatuh Tempo</th>
+				<th>Tanggal Kembali</th>
 			</tr>
-		<?php endforeach; ?>
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+			<?php
+			$no = 1; // Initialize the sequential number
+			foreach ($library as $item):
+				?>
+				<tr>
+					<td><?php echo $no++; ?></td>
+					<td>
+						<a href="#" class="item-name" data-bs-toggle="modal" data-bs-target="#editModal"
+						   data-id="<?php echo $item['id']; ?>"
+						   data-title="<?php echo $item['title']; ?>"
+						   data-author="<?php echo $item['author']; ?>"
+						   data-genre="<?php echo $item['genre']; ?>"
+						   data-published_year="<?php echo $item['published_year']; ?>"
+						   data-borrowed_by="<?php echo $item['borrowed_by']; ?>"
+						   data-borrow_date="<?php echo $item['borrow_date']; ?>"
+						   data-due_date="<?php echo $item['due_date']; ?>"
+						   data-return_date="<?php echo $item['return_date']; ?>">
+							<?php echo $item['title']; ?>
+						</a>
+					</td>
+					<td><?php echo $item['author']; ?></td>
+					<td><?php echo $item['genre']; ?></td>
+					<td><?php echo $item['published_year']; ?></td>
+					<td><?php echo $item['borrowed_by']; ?></td>
+					<td><?php echo $item['borrow_date']; ?></td>
+					<td><?php echo $item['due_date']; ?></td>
+					<td><?php echo $item['return_date']; ?></td>
+				</tr>
+			<?php endforeach; ?>
+			</tbody>
+		</table>
+	</div>
 </div>
 
 <!-- Edit Modal -->
