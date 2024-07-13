@@ -26,6 +26,11 @@
 		<h1>Daftar Koleksi Buku</h1>
 		<button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#createModal">Tambah Buku</button>
 	</div>
+	<div class="search-container">
+		<?php echo form_open('library', ['method' => 'get']); ?>
+		<input type="text" name="query" class="form-control" placeholder="Search by title" value="<?php echo $query ?? ''; ?>">
+		<?php echo form_close(); ?>
+	</div>
 	<div class="table-responsive">
 		<table class="table table-striped table-hover">
 			<thead class="table-light">

@@ -21,7 +21,15 @@ class Library extends CI_Controller {
     {
 		$data['title'] = 'List Library';
 		$data['active_menu'] = 'data_Library';
-		$data['library'] = $this->LibraryModel->get();
+
+		$search_query = $this->input->get('query');
+
+		if ($search_query) {
+			$data['library'] = $this->LibraryModel->search_books($search_query);
+		} else {
+			$data['library'] = $this->LibraryModel->get();
+		}
+
 		$data['user'] = $this->session->userdata('username');
 		$data['content'] = $this->load->view('library_view', $data, true);
         $this->load->view('template/template', $data);
